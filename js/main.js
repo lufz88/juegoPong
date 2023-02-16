@@ -22,8 +22,24 @@ class Paletas {
     }
 }
 
-jugador1 = new Paletas(30, 100, 10, 250);
-jugador2 = new Paletas(30, 100, 860, 250);
+class Pelotas {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    pintarPelota() {
+        lienzo.beginPath();
+        lienzo.arc(this.x, this.y, 10, 0, Math.PI * 2, true);
+        lienzo.fill();
+        lienzo.stroke();
+    }
+}
+
+
+let jugador1 = new Paletas(30, 100, 10, 250);
+let jugador2 = new Paletas(30, 100, 860, 250);
+let pelota = new Pelotas(455, 295);
 
 function iniciarJuego(){
     intervalo = setInterval(pintarMapa, 50)
@@ -44,6 +60,7 @@ function pintarMapa() {
 
     jugador1.pintarPaleta();
     jugador2.pintarPaleta();
+    pelota.pintarPelota();
 }
 
 function moverArriba1() {
@@ -109,6 +126,5 @@ function sePresionoUnaTecla(event) {
             break;
     }
 }
-
 
 iniciarJuego()
