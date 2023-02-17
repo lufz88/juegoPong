@@ -26,6 +26,8 @@ class Pelotas {
     constructor(x, y) {
         this.x = x;
         this.y = y;
+        this.velocidadX = 10;
+        this.velocidadY = 10;
     }
 
     pintarPelota() {
@@ -33,6 +35,12 @@ class Pelotas {
         lienzo.arc(this.x, this.y, 10, 0, Math.PI * 2, true);
         lienzo.fill();
         lienzo.stroke();
+    }
+
+    moverPelota() {
+        this.x += this.velocidadX;
+        this.y += this.velocidadY;
+        rebotar(); 
     }
 }
 
@@ -61,6 +69,7 @@ function pintarMapa() {
     jugador1.pintarPaleta();
     jugador2.pintarPaleta();
     pelota.pintarPelota();
+    pelota.moverPelota();
 }
 
 function moverArriba1() {
@@ -124,6 +133,17 @@ function sePresionoUnaTecla(event) {
         
         default:
             break;
+    }
+}
+
+function rebotar() {
+    if(pelota.x <= jugador1.x + jugador1.width && (pelota.y >= jugador1.y && pelota.y <= (jugador1.y + jugador1.height)) || (pelota.x >= (jugador2.x) && (pelota.y >= jugador2.y && pelota.y <= (jugador2.y + jugador2.height)))) {
+        pelota.velocidadX *= -1;
+    } else if(pelota.y <= 0 || pelota.y >= 600) {
+        pelota.velocidadY *= -1;
+    } else if(pelota.x <= 0 || pelota >= 900) {
+        velocidadX = 0;
+        velocidadY = 0;
     }
 }
 
