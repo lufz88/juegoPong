@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pong</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <canvas id="mapa"></canvas>
+    <header>
+        <h1>SuperPong</h1>
+    </header>
+    <section id="canvas-container">
+        <canvas id="mapa"></canvas>
+    </section>
+    <section id="points-container">
+        <p id="puntaje1">0</p>
+        <p id="puntaje2">0</p>
+    </section>
+    <section id="message-container">
+        <p id="message">Press Enter to start</p>
+        <p>Use W and S for the player one and ArrowUP and ArrowDown for the player two</p>
+    </section>
+    
     
     <script src="./js/main.js"></script>
 </body>

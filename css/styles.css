@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+body header h1 {
+    margin: 0 0 8px 0 ;
+}
+body #points-container {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+body #points-container p {
+    font-size: 48px;
+    margin: 0;
+}
+
+body #message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body #message-container p {
+    margin-bottom: 0;
+}
